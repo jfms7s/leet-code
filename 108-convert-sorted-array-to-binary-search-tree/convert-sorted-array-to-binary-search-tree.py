@@ -5,16 +5,23 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
-        if not nums:
-            return None
+    def sortedArrayToBST(self, nums: List[int],left=None,right=None) -> Optional[TreeNode]:
+        if left is None:
+            left = 0
         
-        size = len(nums)
-        pivot = size // 2
+        if right is None:
+            right = len(nums)
+
+        print(f"{left=} {right=} {nums[left:right]}")
+
+        if left == right:
+            return None
+
+        pivot = (left+right) // 2
 
         return TreeNode(
             val=nums[pivot],
-            left=self.sortedArrayToBST(nums[0:pivot]),
-            right=self.sortedArrayToBST(nums[pivot+1:size])
+            left=self.sortedArrayToBST(nums,left,pivot),
+            right=self.sortedArrayToBST(nums,pivot+1,right)
         )
         
