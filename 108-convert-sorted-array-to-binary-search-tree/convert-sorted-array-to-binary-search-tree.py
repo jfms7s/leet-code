@@ -5,12 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def sortedArrayToBST(self, nums: List[int],left=None,right=None) -> Optional[TreeNode]:
-        if left is None:
-            left = 0
-        
-        if right is None:
-            right = len(nums)
+
+    def buildTree(self,nums: List[int],left,right):
 
         if left == right:
             return None
@@ -19,7 +15,11 @@ class Solution:
 
         return TreeNode(
             val=nums[pivot],
-            left=self.sortedArrayToBST(nums,left,pivot),
-            right=self.sortedArrayToBST(nums,pivot+1,right)
+            left=self.buildTree(nums,left,pivot),
+            right=self.buildTree(nums,pivot+1,right)
         )
+
+
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        return self.buildTree(nums,0,len(nums))
         
