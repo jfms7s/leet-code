@@ -12,7 +12,7 @@ class Solution:
         }
         result = 0
         previous = 0
-        for char in s[::-1]:
+        for char in reversed(s):
             current = roman_values[char]
             signal = 1 if current >= previous else -1
 
