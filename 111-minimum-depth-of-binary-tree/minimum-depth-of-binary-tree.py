@@ -6,23 +6,23 @@
 #         self.left = left
 #         self.right = right
 
-def minDepth(root: Optional[TreeNode], depth=0) -> int:
-    l = root.left and minDepth(root.left,depth+1)
-    r = root.right and minDepth(root.right,depth+1)
-
-    if not (l or r):
-        return depth
-
-    if l and r:
-        return min(l,r)
-
-    return r or l
-
-
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         
         if not root:
             return 0
 
-        return minDepth(root,1 )
+        nodes = [root]
+        level = 0
+
+        while nodes:
+            level += 1
+            new_nodes = []
+            for node in nodes:
+
+                if not(node.left or node.right):
+                    return level
+
+                node.left and new_nodes.append(node.left)
+                node.right and new_nodes.append(node.right)
+            nodes = new_nodes
