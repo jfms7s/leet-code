@@ -12,8 +12,6 @@ class Solution:
         if right is None:
             right = len(nums)
 
-        print(f"{left=} {right=} {nums[left:right]}")
-
         if left == right:
             return None
 
