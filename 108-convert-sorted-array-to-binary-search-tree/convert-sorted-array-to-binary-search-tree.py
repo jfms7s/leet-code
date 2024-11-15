@@ -12,7 +12,6 @@ class Solution:
         size = len(nums)
         pivot = size // 2
 
-        print(f"{nums=} {size=} {pivot=}")
         return TreeNode(
             val=nums[pivot],
             left=self.sortedArrayToBST(nums[0:pivot]),
