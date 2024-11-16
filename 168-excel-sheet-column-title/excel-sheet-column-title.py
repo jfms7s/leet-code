@@ -4,7 +4,8 @@ class Solution:
         result = ""
         start_char = ord("A")
         base = 26
-        while columnNumber > 0:
+        remainder = None
+        while columnNumber > 0 or remainder is None:
             remainder = (columnNumber -1 ) % base
             columnNumber = (columnNumber -1 ) // base 
             result = chr(start_char+remainder) + result
