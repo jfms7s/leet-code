@@ -8,7 +8,6 @@
 
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        print(root,targetSum)
         if not root: return False
         
         current = targetSum - root.val
