@@ -11,7 +11,8 @@ class Solution:
             
         fast = slow = ListNode (val = None, next = head)
         
-        while (fast := fast.next) and (fast := fast.next):
+        while fast.next and fast.next.next:
+            fast = fast.next.next
             slow = slow.next
             if fast == slow:
                 return True
