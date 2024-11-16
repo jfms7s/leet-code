@@ -8,10 +8,8 @@ class Solution:
             return "A"
 
         while columnNumber > 0:
-            print(f"{columnNumber=} ")
             remainder = (columnNumber -1 ) % 26
-            columnNumber = (columnNumber-1) // 26 
-            print(f"{remainder=} {columnNumber=} ")
+            columnNumber = (columnNumber -1 ) // 26 
             result = chr(start_char+remainder) + result
 
         return result
