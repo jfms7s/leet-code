@@ -3,5 +3,5 @@ class Solution:
         s = s.lower()
         
         s = [c for c in s if c.isalnum()]
-        print("".join(s),"".join(reversed(s)))
+        
         return s == s[::-1]
