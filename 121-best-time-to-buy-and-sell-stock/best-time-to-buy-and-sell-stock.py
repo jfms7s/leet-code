@@ -7,9 +7,8 @@ class Solution:
 
         for value in prices:
 
+            profit = max(profit, value - value_min)
             if value_min > value:
                 value_min = value
-            else:
-                profit = max(profit, value - value_min)
 
         return profit
