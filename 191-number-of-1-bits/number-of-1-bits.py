@@ -3,8 +3,7 @@ class Solution:
         counter = 0
         while n > 0:
             bit = n & 1
-            if bit:
-                counter += bit
+            counter += bit
             n >>= 1
 
         return counter
