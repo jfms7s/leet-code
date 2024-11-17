@@ -8,10 +8,8 @@ class Solution:
 
         for i,current in enumerate(nums):
             prev = resuts.get(current, None)
-            
             if prev is not None and i-prev <= k:
                 return True
-
             resuts[current] = i
         return False
 
