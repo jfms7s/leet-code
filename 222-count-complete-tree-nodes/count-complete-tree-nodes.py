@@ -18,11 +18,7 @@ class Solution:
         next_node = root
         while next_node := next_node.right: l_count += 1
 
-        print(f"{root.val=} {r_count=} {l_count=}")
         if r_count == l_count:
-            print(f"balance {root.val=} {2 ** l_count=}")
             return (2 ** l_count)-1
-
-        result = 1 + self.countNodes(root.left) + self.countNodes(root.right)
-        print(f"unbalance {root.val=} {result=}")
-        return result
+            
+        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
