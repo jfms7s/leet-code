@@ -1,6 +1,8 @@
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        
+        if len(nums) == 1 or len(nums) == len(set(nums)):
+            return False
+            
         resuts=dict()
 
         for i in range(len(nums)):
