@@ -6,8 +6,7 @@ class Solution:
 
         resuts=dict()
 
-        for i in range(len(nums)):
-            current = nums[i]
+        for i,current in enumerate(nums):
             prev = resuts.get(current, None)
             
             if prev is not None and i-prev <= k:
