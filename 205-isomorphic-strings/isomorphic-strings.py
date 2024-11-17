@@ -1,6 +1,7 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         
+        seen = set()
         mappings=dict()
         size = len(s)
 
@@ -8,7 +9,8 @@ class Solution:
 
             mapping = mappings.get(s[i],None)
             
-            if mapping is None and t[i] not in mappings.values():
+            if mapping is None and t[i] not in seen:
+                seen.add(t[i])
                 mapping = mappings[s[i]] = t[i]
 
             if mapping != t[i]:
