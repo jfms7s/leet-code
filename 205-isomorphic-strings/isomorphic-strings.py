@@ -1,5 +1,14 @@
 class Solution:
+    
     def isIsomorphic(self, s: str, t: str) -> bool:
+        
+        s_set = set(s)
+        t_set = set(t)
+        pair_set = set(zip(s,t))
+
+        return len(s_set) == len(t_set) == len(pair_set)
+    
+    def isIsomorphic_imp1(self, s: str, t: str) -> bool:
         
         seen = set()
         mappings=dict()
