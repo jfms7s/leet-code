@@ -6,7 +6,7 @@ class Solution:
         
         acc = sum(nums[left:right])
         avg = acc/k
-        print(acc)
+
         while right < size:
             acc = acc - nums[left] + nums[right]
             avg = max(avg, acc/k)
