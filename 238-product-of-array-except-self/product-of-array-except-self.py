@@ -4,6 +4,7 @@ class Solution:
         size = len(nums)
         prefix = [1] * size
         sufix = [1] * size
+        result = [1] * size
 
         previous_result = 1
         for i in range(size):
@@ -15,7 +16,7 @@ class Solution:
             sufix[i] = previous_result
             previous_result = previous_result * nums[i]
 
-        return [
-            prefix[i] * sufix[i]
-            for i in range(size)
-        ]
+        for i in range(size):
+            result[i] = prefix[i] * sufix[i]
+
+        return result
