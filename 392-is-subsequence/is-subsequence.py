@@ -1,9 +1,6 @@
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
         
-        if s == "":
-            return True
-
         t_index = s_index = 0
 
 
