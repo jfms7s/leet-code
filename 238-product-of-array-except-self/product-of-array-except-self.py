@@ -5,12 +5,15 @@ class Solution:
         prefix = [1] * size
         sufix = [1] * size
 
-        for i in range(1,size):
-            prefix[i] = prefix[i-1] * nums[i-1]
+        previous_result = 1
+        for i in range(size):
+            prefix[i] = previous_result
+            previous_result = nums[i] * previous_result
 
-
-        for i in range(size-2,-1,-1):
-            sufix[i] = sufix[i+1] * nums[i+1]
+        previous_result = 1
+        for i in range(size-1,-1,-1):
+            sufix[i] = previous_result
+            previous_result = previous_result * nums[i]
 
         return [
             prefix[i] * sufix[i]
